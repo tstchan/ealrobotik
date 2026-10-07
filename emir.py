@@ -18,4 +18,4 @@ while True:
     else:
         dirsek_motoru.write(sayı_dirsek)
         print(f"dirsek motoru {sayı_dirsek} dereceye döndü")
-    print("kol hareket ettirildi")
+        print("kol hareket ettirildi")
