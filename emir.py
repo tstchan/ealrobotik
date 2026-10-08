@@ -3,9 +3,9 @@ import time
 kart=pyfirmata.Arduino('COM3')
 omuz_motoru=kart.get_pin('d:3:s')
 dirsek_motoru=kart.get_pin('d:5:s')
-guncel_omuz=0
-guncel_dirsek=0
-HIZ=0.02
+guncel_omuz=90
+guncel_dirsek=90
+HIZ=0.03
 while True:
     try:
         secim=input("hizi değiştirmek ister misiniz? (e/h): ")
