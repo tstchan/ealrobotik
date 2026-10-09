@@ -3,18 +3,18 @@ import time
 kart=pyfirmata.Arduino('COM3')
 omuz_motoru=kart.get_pin('d:3:s')
 dirsek_motoru=kart.get_pin('d:5:s')
-guncel_omuz=0
-guncel_dirsek=0
+guncel_omuz=180
+guncel_dirsek=180
 HIZ=0.05
 while True:
     try:
-        secim=input("hizi değiştirmek ister misiniz? (e/h): ")
+        secim=input("hizi degistirmek ister misiniz? (e/h): ")
         if secim == "e":
             girdi_hiz=input("hizi giriniz")
             HIZ=float(girdi_hiz)
-        girdi_omuz=input("omuz açisini giriniz")
+        girdi_omuz=input("omuz acisini giriniz")
         sayi_omuz=int(girdi_omuz)
-        girdi_dirsek=input("dirsek açisini giriniz")
+        girdi_dirsek=input("dirsek acisini giriniz")
         sayi_dirsek=int(girdi_dirsek)
     except ValueError:
         print("lütfen sayi gir")
@@ -31,7 +31,7 @@ while True:
             omuz_motoru.write(aci)
             time.sleep(HIZ)
         guncel_omuz=sayi_omuz
-        print(f"omuz motoru {sayi_omuz} dereceye döndü")
+        print(f"omuz motoru {sayi_omuz} dereceye dondu")
     if sayi_dirsek <0 or sayi_dirsek>180:
         print("hata")
         continue
@@ -44,5 +44,5 @@ while True:
             dirsek_motoru.write(aci)
             time.sleep(HIZ)
         guncel_dirsek=sayi_dirsek
-        print(f"dirsek motoru {sayi_dirsek} dereceye döndü")
+        print(f"dirsek motoru {sayi_dirsek} dereceye dondu")
     print("kol hareket ettirildi")
